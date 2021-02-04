@@ -1,10 +1,11 @@
 import styled from "styled-components"
+import flutureLogo from "../assets/flutureLogo.png"
 
 const Nav = () => {
 	return (
 		<NavWrapper>
 			<NavContents>
-				<NavLogo src='http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png' />
+				<NavLogo src={flutureLogo} />
 				<NavAvatar src='https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png' />
 			</NavContents>
 		</NavWrapper>
@@ -15,7 +16,7 @@ const NavWrapper = styled.div`
 	top: 0;
 	padding: 20px;
 	width: 100%;
-	height: 30px;
+	height: 45px;
 	z-index: 1;
 	background-color: black;
 	/* Animations */
@@ -24,12 +25,12 @@ const NavWrapper = styled.div`
 `
 const NavContents = styled.div`
 	display: flex;
-	justify-content: space-between;
+	/* justify-content: space-between; */
 `
 const NavLogo = styled.img`
 	position: fixed;
-	top: 10px;
-	left: 0;
+	top: -10px;
+	left: 100;
 	width: 100px;
 	object-fit: contain;
 	padding-left: 20px;
@@ -39,7 +40,7 @@ const NavAvatar = styled.img`
 	position: fixed;
 	border-radius: 2px;
 	right: 20px;
-	width: 32px;
+	width: 35px;
 	cursor: pointer;
 `
 
