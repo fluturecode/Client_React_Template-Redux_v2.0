@@ -5,7 +5,7 @@ import axios from "../axios.js"
 const Row = ({ title, fetchUrl, isLargeRow = false }) => {
 	const [movies, setMovies] = useState([])
 
-	const base_url = "https://imag.tmdb.org/t/p/original/"
+	const base_url = "https://image.tmdb.org/t/p/original/"
 
 	useEffect(() => {
 		async function fetchData() {
@@ -19,13 +19,18 @@ const Row = ({ title, fetchUrl, isLargeRow = false }) => {
 	return (
 		<RowWrapper>
 			<TitleContainer>{title}</TitleContainer>
-			{/* {movies.map((movie) => (
-				<RowPoster ${isLargeRow && RowLargePoster}
-					src={`${base_url}${
-						isLargeRow ? movie.poster_path : movie.backdrop_path
-					}`}
-					alt={movie.name} */}
-			{/* /> ))} */}
+
+			{movies.map((movie, index) => (
+				<PosterWrapper>
+					<PosterImage
+						key={index}
+						src={`${base_url}${
+							isLargeRow ? movie.poster_path : movie.backdrop_path
+						}`}
+						alt={movie.name}
+					/>
+				</PosterWrapper>
+			))}
 		</RowWrapper>
 	)
 }
@@ -35,6 +40,8 @@ const RowWrapper = styled.div`
 `
 const TitleContainer = styled.h2``
 
-const MovieImage = styled.img``
+const PosterWrapper = styled.div``
+
+const PosterImage = styled.img``
 
 export default Row
