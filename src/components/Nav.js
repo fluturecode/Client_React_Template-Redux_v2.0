@@ -7,10 +7,10 @@ const StyledNav = styled.div`
 	width: 100%;
 	height: 30px;
 	z-index: 1;
-	/* Animations */
-	transition-timing-function: ease-in;
-	transition: all 0.5s;
 	background-color: black;
+	/* Animations */
+	/* transition-timing-function: ease-in;
+  transition: all 0.5s; */
 `
 const NavContents = styled.div`
 	display: flex;
@@ -27,8 +27,9 @@ const NavLogo = styled.img`
 `
 const NavAvatar = styled.img`
 	position: fixed;
+	border-radius: 2px;
 	right: 20px;
-	width: 30px;
+	width: 32px;
 	cursor: pointer;
 `
 const Nav = () => {

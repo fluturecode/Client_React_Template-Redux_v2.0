@@ -1,12 +1,12 @@
 import React from "react"
+import Banner from "../components/Banner"
 import Nav from "../components/Nav"
 
 const Home = () => {
 	return (
 		<>
 			<Nav />
-			<h1>Test</h1>
-			{/* Banner */}
+			<Banner />
 			{/* Row */}
 		</>
 	)
