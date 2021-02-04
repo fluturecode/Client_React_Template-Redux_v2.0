@@ -28,21 +28,18 @@ const Banner = () => {
 		<BannerHeader
 			style={{
 				backgroundSize: "cover",
-				backgroundImage: `url("https://i.imgur.com/e1hLQ2m.png")`,
+				backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
 				backgroundPosition: "center center",
 			}}>
 			<BannerContents>
-				<BannerTitle>Movie Name</BannerTitle>
+				<BannerTitle>
+					{movie?.title || movie?.name || movie?.original_name}
+				</BannerTitle>
 				<BannerButtons>
 					<BannerButton>Play</BannerButton>
 					<BannerButton>My List</BannerButton>
 				</BannerButtons>
-				<BannerDescription>
-					{truncate(
-						`This is a test..........This is a test..........This is a test..........This is a test..........This is a test..........This is a test..........`,
-						150
-					)}
-				</BannerDescription>
+				<BannerDescription>{truncate(movie?.overview, 150)}</BannerDescription>
 			</BannerContents>
 			<BannerFadeBottom />
 		</BannerHeader>
@@ -50,7 +47,6 @@ const Banner = () => {
 }
 const BannerHeader = styled.header`
 	position: relative;
-	height: 448px;
 	color: white;
 	object-fit: contain;
 `
@@ -84,7 +80,7 @@ const BannerButton = styled.button`
 		transition: all 0.2s;
 	}
 `
-const BannerDescription = styled.div`
+const BannerDescription = styled.h1`
 	width: 45rem;
 	line-height: 1.3;
 	padding-top: 1rem;

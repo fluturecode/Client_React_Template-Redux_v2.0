@@ -1,7 +1,15 @@
+import styled from "styled-components"
 import Home from "./pages/Home"
 
-function App() {
-	return <Home />
+const App = () => {
+	return (
+		<AppWrapper>
+			<Home />
+		</AppWrapper>
+	)
 }
 
+const AppWrapper = styled.div`
+	background: #111;
+`
 export default App
