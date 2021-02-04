@@ -18,17 +18,21 @@ const Row = ({ title, fetchUrl, isLargeRow = false }) => {
 
 	return (
 		<RowWrapper>
-			<TitleContainer>{title}</TitleContainer>
+			<h2>{title}</h2>
 			<RowPosters>
-				{movies.map((movie) => (
-					<PosterImage
-						key={movie.id}
-						src={`${base_url}${
-							isLargeRow ? movie.poster_path : movie.backdrop_path
-						}`}
-						alt={movie.name}
-					/>
-				))}
+				{movies.map(
+					(movie) =>
+						((isLargeRow && movie.poster_path) ||
+							(!isLargeRow && movie.backdrop_path)) && (
+							<PosterImage
+								key={movie.id}
+								src={`${base_url}${
+									isLargeRow ? movie.poster_path : movie.backdrop_path
+								}`}
+								alt={movie.name}
+							/>
+						)
+				)}
 			</RowPosters>
 		</RowWrapper>
 	)
@@ -38,8 +42,6 @@ const RowWrapper = styled.div`
 	color: white;
 	margin-left: 20px;
 `
-const TitleContainer = styled.h2``
-
 const RowPosters = styled.div`
 	display: flex;
 	overflow-y: hidden;
@@ -49,13 +51,6 @@ const RowPosters = styled.div`
 		display: none;
 	}
 `
-// cost PosterLarge = styled.img`
-// max-height: 250px;
-// &:hover{
-// 	transform: scale(1.09);
-// 	opacity: 1
-// }`
-
 const PosterImage = styled.img`
 	max-height: 100px;
 	object-fit: contain;
