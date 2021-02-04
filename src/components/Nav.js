@@ -20,7 +20,7 @@ const NavWrapper = styled.div`
 	background-color: black;
 	/* Animations */
 	/* transition-timing-function: ease-in;
-  transition: all 0.5s; */
+	transition: all 0.5s; */
 `
 const NavContents = styled.div`
 	display: flex;
