@@ -1,6 +1,16 @@
 import styled from "styled-components"
 
-const StyledNav = styled.div`
+const Nav = () => {
+	return (
+		<NavWrapper>
+			<NavContents>
+				<NavLogo src='http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png' />
+				<NavAvatar src='https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png' />
+			</NavContents>
+		</NavWrapper>
+	)
+}
+const NavWrapper = styled.div`
 	position: fixed;
 	top: 0;
 	padding: 20px;
@@ -32,15 +42,5 @@ const NavAvatar = styled.img`
 	width: 32px;
 	cursor: pointer;
 `
-const Nav = () => {
-	return (
-		<StyledNav>
-			<NavContents>
-				<NavLogo src='http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png' />
-				<NavAvatar src='https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png' />
-			</NavContents>
-		</StyledNav>
-	)
-}
 
 export default Nav
