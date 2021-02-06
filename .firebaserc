@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "netflix-fd7f8"
+    "default": "netflix-fd7f8",
+    "test": "flutureflix-b3325"
   }
 }

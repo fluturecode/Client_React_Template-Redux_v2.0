@@ -44,12 +44,12 @@ const RowWrapper = styled.div`
 `
 const RowPosters = styled.div`
 	display: flex;
-	overflow-y: hidden;
-	overflow-x: scroll;
 	padding: 20px;
+	/* overflow-y: hidden;
+	overflow-x: scroll;
 	&::-webkit-scrollbar {
 		display: none;
-	}
+	} */
 `
 const PosterImage = styled.img`
 	max-height: 100px;

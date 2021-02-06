@@ -1,10 +1,10 @@
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-	apiKey: "AIzaSyBWh4lEW0uQKKTBdLRj1q6Gn22L5E2bYIU",
-	authDomain: "netflix-fd7f8.firebaseapp.com",
-	projectId: "netflix-fd7f8",
-	storageBucket: "netflix-fd7f8.appspot.com",
-	messagingSenderId: "376437708656",
-	appId: "1:376437708656:web:f795ae431705e1c97261b5",
-	measurementId: "G-GNYPVRDGRV",
+	apiKey: "AIzaSyCmlGcVYlCihUPKDpElE6x7LhvHeRgT-UU",
+	authDomain: "flutureflix-b3325.firebaseapp.com",
+	projectId: "flutureflix-b3325",
+	storageBucket: "flutureflix-b3325.appspot.com",
+	messagingSenderId: "335869713025",
+	appId: "1:335869713025:web:75060cc5679a5602f34b80",
+	measurementId: "G-KK0VQL54TC",
 }
