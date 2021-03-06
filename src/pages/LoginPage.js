@@ -4,15 +4,24 @@ import styled from "styled-components"
 function LoginPage() {
 	return (
 		<LoginContainer>
-			<LoginLogo
-				src='https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png'
-				alt='flutureflix logo'
-			/>
-			<LoginButton>Sign In</LoginButton>
-			<LoginScreenGradient />
+			<LoginBackground>
+				<LoginLogo
+					src='https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png'
+					alt='flutureflix logo'
+				/>
+				<LoginButton>Sign In</LoginButton>
+				<LoginScreenGradient />
+			</LoginBackground>
 			<LoginScreenBody>
 				<>
 					<h1>Unlimited films, TV programs and more.</h1>
+					<h2>Watch anywhere. Canel anytime.</h2>
+					<h3>
+						Ready to watch? Enter your email to create or restart your
+						membership.
+					</h3>
+
+					<LoginScreenInput></LoginScreenInput>
 				</>
 			</LoginScreenBody>
 		</LoginContainer>
@@ -26,6 +35,8 @@ const LoginContainer = styled.div`
 		center no-repeat;
 	background-size: cover;
 `
+const LoginBackground = styled.div``
+
 const LoginLogo = styled.img`
 	position: fixed;
 	left: 0;
@@ -59,6 +70,30 @@ const LoginScreenGradient = styled.div`
 	);
 `
 
-const LoginScreenBody = styled.div``
+const LoginScreenBody = styled.div`
+	position: absolute;
+	top: 30%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	z-index: 1;
+	color: #fff;
+	padding: 20px;
+
+	h1 {
+		font-size: 3.125rem;
+		margin-bottom: 20px;
+	}
+	h2 {
+		font-size: 2rem;
+		font-weight: 400;
+		margin-bottom: 30px;
+	}
+	h3 {
+		font-size: 1.3rem;
+		font-weight: 400;
+	}
+`
+const LoginScreenInput = styled.div``
 
 export default LoginPage
