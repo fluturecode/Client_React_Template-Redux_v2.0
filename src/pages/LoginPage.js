@@ -1,28 +1,39 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
+import SignUpPage from "./SignUpPage"
 
 function LoginPage() {
+	const [signUp, setSignUp] = useState(false)
+
 	return (
 		<LoginContainer>
-			<LoginBackground>
-				<LoginLogo
-					src='https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png'
-					alt='flutureflix logo'
-				/>
-				<LoginButton>Sign In</LoginButton>
-				<LoginScreenGradient />
-			</LoginBackground>
+			<LoginLogo
+				src='https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png'
+				alt='flutureflix logo'
+			/>
+			<LoginButton onClick={() => setSignUp(true)}>Sign In</LoginButton>
+			<LoginScreenGradient />
 			<LoginScreenBody>
-				<>
-					<h1>Unlimited films, TV programs and more.</h1>
-					<h2>Watch anywhere. Canel anytime.</h2>
-					<h3>
-						Ready to watch? Enter your email to create or restart your
-						membership.
-					</h3>
-
-					<LoginScreenInput></LoginScreenInput>
-				</>
+				{signUp ? (
+					<SignUpPage />
+				) : (
+					<>
+						<h1>Unlimited films, TV programs and more.</h1>
+						<h2>Watch anywhere. Canel anytime.</h2>
+						<h3>
+							Ready to watch? Enter your email to create or restart your
+							membership.
+						</h3>
+						<LoginScreenInput>
+							<form>
+								<input type='email' placeholder='Email Address' />
+								<GetStartedButton onClick={() => setSignUp(true)}>
+									GET STARTED
+								</GetStartedButton>
+							</form>
+						</LoginScreenInput>
+					</>
+				)}
 			</LoginScreenBody>
 		</LoginContainer>
 	)
@@ -35,7 +46,6 @@ const LoginContainer = styled.div`
 		center no-repeat;
 	background-size: cover;
 `
-const LoginBackground = styled.div``
 
 const LoginLogo = styled.img`
 	position: fixed;
@@ -94,6 +104,26 @@ const LoginScreenBody = styled.div`
 		font-weight: 400;
 	}
 `
-const LoginScreenInput = styled.div``
+const LoginScreenInput = styled.div`
+	form {
+		input {
+			padding: 10px;
+			outline-width: 0;
+			height: 30px;
+			width: 30%;
+			border: none;
+			max-width: 600px;
+		}
+	}
+`
+const GetStartedButton = styled.button`
+	padding: 16px 20px;
+	font-size: 1rem;
+	color: #fff;
+	background-color: #e50914;
+	border: none;
+	font-weight: 600;
+	cursor: pointer;
+`
 
 export default LoginPage
