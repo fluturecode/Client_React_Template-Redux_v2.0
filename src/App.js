@@ -3,15 +3,20 @@ import HomePage from "./pages/HomePage"
 import LoginPage from "./pages/LoginPage"
 
 const App = () => {
+	const user = null
+
 	return (
 		<>
 			<Router>
-				<LoginPage />
-				<Switch>
-					<Route exact path='/'>
-						<HomePage />
-					</Route>
-				</Switch>
+				{!user ? (
+					<LoginPage />
+				) : (
+					<Switch>
+						<Route exact path='/'>
+							<HomePage />
+						</Route>
+					</Switch>
+				)}
 			</Router>
 		</>
 	)
