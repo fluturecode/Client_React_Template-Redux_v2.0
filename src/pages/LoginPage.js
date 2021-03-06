@@ -89,6 +89,8 @@ const LoginScreenBody = styled.div`
 	z-index: 1;
 	color: #fff;
 	padding: 20px;
+	left: 0;
+	right: 0;
 
 	h1 {
 		font-size: 3.125rem;

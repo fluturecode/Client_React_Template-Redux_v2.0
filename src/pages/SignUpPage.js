@@ -25,8 +25,6 @@ const SignUpContainer = styled.div`
 const FormContainer = styled.form`
 	display: grid;
 	flex-direction: column;
-	h4 {
-	}
 `
 
 const FormButton = styled.button``
