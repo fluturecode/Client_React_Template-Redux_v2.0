@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import styled from "styled-components"
-import Home from "./pages/Home"
+import Home from "./pages/HomePage"
 
 const App = () => {
 	return (
